@@ -1,0 +1,56 @@
+
+<body>
+    <div style="height: 140px;"></div>
+    <form [formGroup]="SolicitudForm" (ngSubmit)="registrarSolicitud()">
+
+      <div class="Formulario" style="display: flex; width: 100%; ">
+
+		<div class="Inputs" style="width: 50%;">
+        <label for="general">Nombre</label>
+        <input type="text" id="general" name="general" formControlName = "Solicitante"/><br /><br />
+
+        <label for="asunto">Asunto</label>
+        <input type="text" id="asunto" name="asunto" formControlName = "Asunto"/><br /><br />
+
+        <label for="prioridad">Prioridad</label>
+        <select id="prioridad" name="rioridad" formControlName = "Prioridad">
+          <option value="alta">Alta</option>
+          <option value="media">Media</option>
+          <option value="baja">Baja</option></select
+        ><br /><br />
+
+        <label for="area">Area</label>
+        <select id="area" name="area"formControlName = "Area">
+          <option value="Medica">Medica</option>
+          <option value="Enfermeria">Cocina</option>
+          <option value="Solicitud">General</option></select
+        ><br /><br />
+		</div>
+
+	<div class="LogoHospicio" style="width: 50%; display: flex; justify-content: center; align-items: center;">
+		<img src="assets/latest.png" alt="" style="width: 90%; max-width: 450px;">
+	</div>
+      </div>
+
+      <div>
+        <h2 style=" font-family: 'Oswald', sans-serif; padding-top: 20px;" > <b>Solicitud</b> </h2>
+        <label for="Descripcion"></label>
+        <textarea  name="Descripcion" formControlName = "Descripcion"
+          id="descripcion"
+          name="descripcion"
+          rows="10"
+          cols="50"
+        style="width: 100%;"
+		  ></textarea
+        >
+    <div style="width: 100%; display: flex; justify-content: center; align-items: center;">
+        <button class="learn-more">
+            <span class="circle" aria-hidden="true">
+            <span class="icon arrow"></span>
+            </span>
+            <span class="button-text">Enviar</span>
+          </button>
+    </div>
+      </div>
+    </form>
+  </body>

@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+.HomePage{
+display: flex;
+justify-content: center;
+align-items: center;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1920' height='1080' preserveAspectRatio='none' viewBox='0 0 1920 1080'%3e%3cg mask='url(%26quot%3b%23SvgjsMask2056%26quot%3b)' fill='none'%3e%3crect width='1920' height='1080' x='0' y='0' fill='url(%23SvgjsLinearGradient2057)'%3e%3c/rect%3e%3cpath d='M1920 0L1847.31 0L1920 255.24z' fill='rgba(255%2c 255%2c 255%2c .1)'%3e%3c/path%3e%3cpath d='M1847.31 0L1920 255.24L1920 606.73L893.8199999999999 0z' fill='rgba(255%2c 255%2c 255%2c .075)'%3e%3c/path%3e%3cpath d='M893.8199999999999 0L1920 606.73L1920 873.69L367.51 0z' fill='rgba(255%2c 255%2c 255%2c .05)'%3e%3c/path%3e%3cpath d='M367.51 0L1920 873.69L1920 904.9200000000001L185.12 0z' fill='rgba(255%2c 255%2c 255%2c .025)'%3e%3c/path%3e%3cpath d='M0 1080L644.63 1080L0 917.79z' fill='rgba(0%2c 0%2c 0%2c .1)'%3e%3c/path%3e%3cpath d='M0 917.79L644.63 1080L1335.6599999999999 1080L0 699.22z' fill='rgba(0%2c 0%2c 0%2c .075)'%3e%3c/path%3e%3cpath d='M0 699.22L1335.6599999999999 1080L1421.4099999999999 1080L0 330.74z' fill='rgba(0%2c 0%2c 0%2c .05)'%3e%3c/path%3e%3cpath d='M0 330.74L1421.4099999999999 1080L1717.4999999999998 1080L0 285.42z' fill='rgba(0%2c 0%2c 0%2c .025)'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask2056'%3e%3crect width='1920' height='1080' fill='white'%3e%3c/rect%3e%3c/mask%3e%3clinearGradient x1='50%25' y1='0%25' x2='50%25' y2='100%25' gradientUnits='userSpaceOnUse' id='SvgjsLinearGradient2057'%3e%3cstop stop-color='rgba(170%2c 234%2c 158%2c 1)' offset='0'%3e%3c/stop%3e%3cstop stop-color='rgba(116%2c 230%2c 94%2c 1)' offset='0.59'%3e%3c/stop%3e%3cstop stop-color='rgba(55%2c 179%2c 30%2c 1)' offset='0.93'%3e%3c/stop%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e");    
+    height: 100vh;
+    flex-direction: column;
+    background-size: cover;
+}
+.BGTop{
+
+    width: 100%;
+    height: 130px;
+    position: absolute;
+    bottom:0;
+    left: 0;
+    background-size: cover;
+
+}
+.HomePage h1{
+    text-align: center;
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    font-size: 130px;
+    text-shadow: black 0.02em 0.02em 0.15em
+}
+
+button {
+    margin-top: 40px;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    vertical-align: middle;
+    text-decoration: none;
+    background: transparent;
+    padding: 0;
+    font-size: inherit;
+    font-family: inherit;
+   }
+   
+   button.learn-more {
+    width: 20rem;
+    height: auto;
+   }
+   
+   button.learn-more .circle {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: relative;
+    display: block;
+    margin: 0;
+    width: 3rem;
+    height: 3rem;
+    background: #000000;
+    border-radius: 2.70833rem;
+   }
+   
+   button.learn-more .circle .icon {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background: #fff;
+   }
+   
+   button.learn-more .circle .icon.arrow {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    left: 0.625rem;
+    width: 1.125rem;
+    height: 0.125rem;
+    background: none;
+   }
+   
+   button.learn-more .circle .icon.arrow::before {
+    position: absolute;
+    content: "";
+    top: -0.29rem;
+    right: 0.0625rem;
+    width: 0.625rem;
+    height: 0.625rem;
+    border-top: 0.125rem solid #fff;
+    border-right: 0.125rem solid #fff;
+    transform: rotate(45deg);
+   }
+   
+   button.learn-more .button-text {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0.75rem 0;
+    margin: 0 0 0 1.85rem;
+    color: black;
+    font-weight: 700;
+    line-height: 1.6;
+    text-align: center;
+    text-transform: uppercase;
+   }
+   
+   button:hover .circle {
+    width: 100%;
+   }
+   
+   button:hover .circle .icon.arrow {
+    background: #fff;
+    transform: translate(1rem, 0);
+   }
+   
+   button:hover .button-text {
+    color: #fff;
+   }
+
+@media (max-width: 991px){
+
+    .HomePage h1{
+        font-size: 85px;
+
+    }
+
+     button.learn-more {
+    width: 20rem;
+    height: auto;
+   }
+}

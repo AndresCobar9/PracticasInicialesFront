@@ -1,0 +1,60 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<body>
+  
+
+    
+    
+    <div class="mat-elevation-z8" style="width: 80vw;background-color: white;overflow-x: scroll; box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.466);">
+        
+        <mat-form-field style="background-color: white; border-radius: 20px;">
+            <mat-label>Buscar Paciente</mat-label>
+            <input matInput (keyup)="applyFilter($event)" placeholder="Search columns" #input>
+        </mat-form-field>
+    
+        <table mat-table [dataSource]="dataSource"  style="border-radius: 20px; overflow-x: scroll; max-width: 100%;" >
+      
+          <!-- Position Column -->
+          <ng-container matColumnDef="ID">
+            <th style="text-align: center;" mat-header-cell *matHeaderCellDef> <b> ID </b></th>
+            <td style="text-align: center;" mat-cell *matCellDef="let element"> {{element.id}} </td>
+          </ng-container>
+      
+          <!-- Name Column -->
+          <ng-container matColumnDef="Nombre">
+            <th style="text-align: center;" mat-header-cell *matHeaderCellDef> <b> Nombre </b></th>
+            <td style="text-align: center;" mat-cell *matCellDef="let element"> {{element.asunto}} </td>
+          </ng-container>
+      
+          <!-- Weight Column -->
+          <ng-container matColumnDef="Area">
+            <th style="text-align: center;" mat-header-cell *matHeaderCellDef> <b> Estado </b> </th>
+            <td style="text-align: center;" mat-cell *matCellDef="let element">
+              <span *ngIf="element.autorizado; else finalizada" style="color: green;">Activa</span>
+              <ng-template #finalizada>
+                <span style="color: red;">Finalizada</span>
+              </ng-template>
+            </td>
+          </ng-container>
+          
+      
+           <!-- Symbol Column -->
+           <ng-container matColumnDef="Solicitud">
+            <th style="width: 150px !important; text-align: center;" mat-header-cell *matHeaderCellDef> <b> Solicitud </b></th>
+            <td style="text-align: center;" mat-cell *matCellDef="let element"> 
+                <button mat-mini-fab color="primary" aria-label="Edit" (click)="solicitudpop(element.id)" >
+                  <mat-icon>info</mat-icon>
+                </button>
+                 </td>
+          </ng-container>
+    
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      
+        <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                       showFirstLastButtons
+                       aria-label="Select page of periodic elements">
+        </mat-paginator>
+      </div>
+    </body>
+    

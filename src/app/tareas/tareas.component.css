@@ -1,0 +1,102 @@
+.ContenedorPrincipal{
+    display: flex;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1920' height='1080' preserveAspectRatio='none' viewBox='0 0 1920 1080'%3e%3cg mask='url(%26quot%3b%23SvgjsMask2056%26quot%3b)' fill='none'%3e%3crect width='1920' height='1080' x='0' y='0' fill='url(%23SvgjsLinearGradient2057)'%3e%3c/rect%3e%3cpath d='M1920 0L1847.31 0L1920 255.24z' fill='rgba(255%2c 255%2c 255%2c .1)'%3e%3c/path%3e%3cpath d='M1847.31 0L1920 255.24L1920 606.73L893.8199999999999 0z' fill='rgba(255%2c 255%2c 255%2c .075)'%3e%3c/path%3e%3cpath d='M893.8199999999999 0L1920 606.73L1920 873.69L367.51 0z' fill='rgba(255%2c 255%2c 255%2c .05)'%3e%3c/path%3e%3cpath d='M367.51 0L1920 873.69L1920 904.9200000000001L185.12 0z' fill='rgba(255%2c 255%2c 255%2c .025)'%3e%3c/path%3e%3cpath d='M0 1080L644.63 1080L0 917.79z' fill='rgba(0%2c 0%2c 0%2c .1)'%3e%3c/path%3e%3cpath d='M0 917.79L644.63 1080L1335.6599999999999 1080L0 699.22z' fill='rgba(0%2c 0%2c 0%2c .075)'%3e%3c/path%3e%3cpath d='M0 699.22L1335.6599999999999 1080L1421.4099999999999 1080L0 330.74z' fill='rgba(0%2c 0%2c 0%2c .05)'%3e%3c/path%3e%3cpath d='M0 330.74L1421.4099999999999 1080L1717.4999999999998 1080L0 285.42z' fill='rgba(0%2c 0%2c 0%2c .025)'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask2056'%3e%3crect width='1920' height='1080' fill='white'%3e%3c/rect%3e%3c/mask%3e%3clinearGradient x1='50%25' y1='0%25' x2='50%25' y2='100%25' gradientUnits='userSpaceOnUse' id='SvgjsLinearGradient2057'%3e%3cstop stop-color='rgba(170%2c 234%2c 158%2c 1)' offset='0'%3e%3c/stop%3e%3cstop stop-color='rgba(116%2c 230%2c 94%2c 1)' offset='0.59'%3e%3c/stop%3e%3cstop stop-color='rgba(55%2c 179%2c 30%2c 1)' offset='0.93'%3e%3c/stop%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e");
+}
+
+.spacer{
+    height: 180px;   
+    background-color: rgba(170, 234, 158, 1);
+} 
+
+
+
+.ContenedorTareas{
+    display: flex;
+    margin: 0% 5% 5% 5%;
+    padding: 2%;
+    border-radius: 10px;
+    transition: border-radius 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: inset 0 -3em 3em rgba(0,0,0,0.1),
+             0 0  0 2px rgb(190, 190, 190),
+             0.3em 0.3em 1em rgba(0,0,0,0.3);
+    background-color: white;
+}
+.ContenedorCalendario{
+    display: flex;
+    background-color: white;
+    margin: 0% 5% 5% 5%;
+    padding: 2%;
+    border-radius: 10px;
+    transition: border-radius 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: inset 0 -3em 3em rgba(0,0,0,0.1),
+             0 0  0 2px rgb(190, 190, 190),
+             0.3em 0.3em 1em rgba(0,0,0,0.3);
+}
+
+  
+
+.Card{
+    height: 150px;
+    display: flex;
+    justify-content: space-between;
+    /* background:white; */
+    cursor: pointer;
+    background: rgb(255, 255, 255);
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 255, .2);
+    transition: all .2s;
+    box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
+}
+
+.card:hover {
+    box-shadow: -12px 12px 2px -1px rgba(0, 0, 255, .2);
+   }
+   
+button {
+    outline: none;
+    cursor: pointer;
+    border: none;
+    padding: 0.9rem 2rem;
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    position: relative;
+    display: inline-block;
+    letter-spacing: 0.05rem;
+    font-weight: 700;
+    font-size: 17px;
+    border-radius: 500px;
+    overflow: hidden;
+    background: #66ff66;
+    color: ghostwhite;
+   }
+   
+   button span {
+    position: relative;
+    z-index: 10;
+    transition: color 0.4s;
+   }
+   
+   button:hover span {
+    color: black;
+   }
+   
+   button::before,
+   button::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+   }
+   
+   .fc-header-toolbar h2,
+.fc-header-toolbar h3,
+.fc-list-heading {
+  font-size: 20px;
+}
+
+.fc-toolbar-chunk{
+    font-size: 16px !important;
+  }

@@ -1,0 +1,24 @@
+<div class="card">
+  <div class="card-header">
+    <small class="card-id" style="font-size: 10px; color: rgb(126, 126, 126); font-style: italic;">{{this.InfoTarea.created}}</small>
+    <h2 class="card-title">{{this.InfoTarea.titulo}}</h2>
+  </div>
+  <div class="card-body">
+    <p class="card-description"> <b> Descripcion: </b><br> {{this.InfoTarea.description}}</p>
+    <p class="card-due-date" style="font-style: italic; text-align: right;">Fecha de entrega: {{this.InfoTarea.entrega}}</p>
+    
+    <button class="close-btn" (click)="Close()">x</button>
+  </div>
+  <div class="Switch">
+    
+    <p > <b> Entregado: </b> </p>
+  <label class="switch">
+    
+    <input type="checkbox" [(ngModel)]="checkboxValue" (ngModelChange)="Entrega(checkboxValue)" >
+    <div class="slider"></div>
+    <div class="slider-card">
+      <div class="slider-card-face slider-card-front"></div>
+      <div class="slider-card-face slider-card-back"></div>
+    </div>
+  </label></div>
+</div>

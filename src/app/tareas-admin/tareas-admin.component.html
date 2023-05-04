@@ -1,0 +1,46 @@
+
+<div class="ContenedorPrincipal"  style="height: 100%;"> 
+  <form class="signup-form"  [formGroup]="TareaForm" (ngSubmit)="RegistrarTarea()">
+    <div class="form-header">
+      <h1>Añadir Tarea</h1>
+    </div>
+
+    <div class="form-body">
+      <div class="horizontal-group">
+        <div class="form-group">
+          <label class="label-title">Nombre de Usuario*</label>
+          <input type="text" id="username" class="form-input" placeholder="Ingrese el nombre de usuario del destinatario" required="required"  formControlName="Name" />
+        </div>
+
+        <div class="form-group">
+          <label class="label-title">Username</label>
+          <input type="text" id="task-id" class="form-input" placeholder="Username" required="required" formControlName="Username" />
+        </div>
+
+        <div class="form-group">
+          <label class="label-title">Nombre de la tarea</label>
+          <input type="text" id="task-name" class="form-input" placeholder="Ingrese un nombre" formControlName="Tarea"/>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="label-title">Descripción</label>
+        <textarea id="description" class="form-input" placeholder="Ingrese una descripción"  style="height: 200px;" formControlName="Descripcion"></textarea>
+      </div>
+
+      <div class="horizontal-group">
+        <div class="form-group">
+          <label class="label-title">Fecha de Entrega</label>
+          <input type="date" id="task-date" class="form-input" required="required" formControlName="Fecha">
+        </div>
+      </div>
+    </div>
+
+    <div class="form-footer" style="height:100px;">
+      <button type="submit" class="btn-submit"><span>Guardar</span></button>
+      <button type="button" class="btn-submit"><span>Limpiar</span></button>
+      <br>
+      <br>
+    </div>
+  </form>
+</div>

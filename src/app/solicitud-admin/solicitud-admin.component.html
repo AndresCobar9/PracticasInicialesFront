@@ -1,0 +1,40 @@
+<form [formGroup]="SolicitudForm" style="margin: 10%">
+
+    <div class="Formulario" style="display: flex; width: 100%; flex-direction: column; ">
+
+        <div class="Inputs" style="display:flex;width: 100%; justify-content: space-around;">
+            
+
+            <label for="asunto">Asunto</label>
+            <input type="text" id="asunto" name="asunto" formControlName="Asunto" /><br /><br />
+
+
+          
+        </div>
+
+        <div>
+            <h2 style=" font-family: 'Oswald', sans-serif; padding-top: 20px;"> <b>Solicitud</b> </h2>
+            <label for="Descripcion"></label>
+            <textarea name="Descripcion" formControlName="Descripcion" id="descripcion" name="descripcion" rows="10"
+                cols="50" style="width: 100%;"></textarea>
+
+            <div style="width: 100%; display: flex; justify-content: center; align-items: center;">
+                
+            </div>
+            
+        </div>
+    </div>
+</form>
+
+<div class="Switch">
+    
+    <p > <b> Activa: </b> </p>
+  <label class="switch">
+    
+    <input type="checkbox" [(ngModel)]="checkboxValue" (ngModelChange)="Entrega(checkboxValue)" >
+    <div class="slider"></div>
+    <div class="slider-card">
+      <div class="slider-card-face slider-card-front"></div>
+      <div class="slider-card-face slider-card-back"></div>
+    </div>
+  </label></div>

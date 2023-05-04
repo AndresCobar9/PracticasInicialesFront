@@ -1,0 +1,28 @@
+
+<form action="" [formGroup]="PublicacionForm" style="flex-direction: column; width: 100%;padding: 10% ; display: flex; ">
+    <div style="display: flex; justify-content: space-between;">
+    <label for="" style = "font-size: 16px;font-weight: bold;color: Black;">Titulo: </label><input type="text"formControlName="titulo"  style="justify-content: center;"> 
+    </div>
+    <div style="display: flex; justify-content: space-between;">
+    <label for="" style = "font-size: 16px;font-weight: bold;color: Black;">Descripcion:</label> <textarea name="" id="" cols="60" rows="5"formControlName="descripcion"></textarea>
+    </div>
+    <div style="display: flex; justify-content: space-between;">
+    <label for="" style = "font-size: 16px;font-weight: bold;color: Black;">Creado:</label> <input type="date"formControlName="created">
+    </div>
+    <div style="display: flex; justify-content: space-between;">
+    <label for="" style = "font-size: 16px;font-weight: bold;color: Black;">Area: </label>
+        <select formControlName="area">
+        <option value="Selecciona">Selecciona un area</option>   
+        <option value="Salud">Salud</option>
+        <option value="Administracion">Administracion</option>
+        <option value="Cocina">Cocina</option>
+      </select> 
+    </div>
+    <div style ="display:flex; justify-content: center; align-items: center; justify-content: space-around;">
+        <button (click)="registraPublicacion()"><span>Publicar</span>
+        </button>
+    </div>
+        
+</form>
+
+  

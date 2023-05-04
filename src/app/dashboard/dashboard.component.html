@@ -1,0 +1,36 @@
+<body>
+    
+    <div style= "height: 200px;"></div>
+    <div class ="contenedorPrincipal" style="height: calc(100vh - 200px);">
+        <div style="width:100vw; display: flex; align-items: center; justify-content: center;">
+            <div class="card"> <h1>Bienvenido, {{this.userdata.name}}</h1> </div>
+        </div>
+        <div class = "ContenedorActividades" style="height: calc(100%-254px);">
+    
+            <div class ="Caja1" style="height: 45%;">
+                <div class = "Solicitudes" style = "width: 45%;">
+                    <div class = "detalles">
+                        <p class = "Titulo" style="font-family: 'Oswald', sans-serif;">SOLICITUDES</p>
+                        <div class="Imagen">
+                            <img src="./assets/Solicitud.png" id="icon" alt="User Icon" />
+                        </div>
+                    </div>
+                    
+                    <button class="Boton" routerLink="/solicitud">Ir</button>
+                </div>
+                <div class = "Usuarios" style = "width: 45%;" >
+                    <div class = "detalles">
+                        <p class = "Titulo" style="font-family: 'Oswald', sans-serif;">TAREAS</p>
+                        <div class="Imagen">
+                            <img src="./assets/Tareas.png" id="icon" alt="User Icon" />
+                        </div>
+                    </div>
+                    
+                    <button class="Boton" routerLink="/tareas">Ir</button>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    </body>
+    
