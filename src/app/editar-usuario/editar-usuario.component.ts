@@ -94,14 +94,10 @@ export class EditarUsuarioComponent {
     
     if(this.updateform.valid){
       this.service.updateUser(this.updateform.value, this.data.ID).subscribe(res => {
-        if(res.value == true){
+       
           this.toastr.success('Usuario actualizado con éxito');
           this.dialogRef.close();
-        }else{
-          this.toastr.error('Error al actualizar usuario',res.error);
-        }
-       
-        
+          
       });
     }else{
       for (const field in this.updateform.controls) {

@@ -33,6 +33,7 @@ import { SolicitudAdminComponent } from './solicitud-admin/solicitud-admin.compo
 import { SolicitudselectorComponent } from './solicitudselector/solicitudselector.component';
 import { SolicitudPreviewComponent } from './solicitud-preview/solicitud-preview.component';
 import { JwtModule } from '@auth0/angular-jwt';
+import { TareasAsignadasComponent } from './tareas-asignadas/tareas-asignadas.component';
 
 export function tokenGetter() {
     return localStorage.getItem('token');
@@ -61,7 +62,8 @@ export function tokenGetter() {
         SolicitudespopComponent,
         SolicitudAdminComponent,
         SolicitudselectorComponent,
-        SolicitudPreviewComponent
+        SolicitudPreviewComponent,
+        TareasAsignadasComponent
         
 
 

@@ -127,4 +127,17 @@ button {
     width: 20rem;
     height: auto;
    }
+
+   .Button{
+    flex-direction: column;
+    gap: 10px !important;
+   }
+
+   Button.learn-more{
+    margin: 0;
+   }
+
+   h1{
+    margin-bottom: 30px;
+   }
 }

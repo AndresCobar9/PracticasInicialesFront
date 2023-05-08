@@ -13,6 +13,7 @@ import { PublicacionesComponent } from './publicaciones/publicaciones.component'
 import { TrabajadoresComponent } from './trabajadores/trabajadores.component';
 import { EditarUsuarioComponent } from './editar-usuario/editar-usuario.component';
 import { HistorialSolicitudesComponent } from './historial-solicitudes/historial-solicitudes.component';
+import { SolicitudPreviewComponent } from './solicitud-preview/solicitud-preview.component';
 
 
 
@@ -30,6 +31,7 @@ const routes: Routes = [
   {path: 'solicitud', component:SolicitudTrabajadorComponent,canActivate:[AuthGuard]},
   {path: 'trabajadores', component:TrabajadoresComponent,canActivate:[AuthGuard]},
   {path: 'Solicitudes', component:HistorialSolicitudesComponent,canActivate:[AuthGuard]},
+  {path: 'SolicitudesAdmin', component:SolicitudPreviewComponent,canActivate:[AuthGuard]},
 ]
 
 @NgModule({

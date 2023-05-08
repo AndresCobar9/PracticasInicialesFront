@@ -16,7 +16,7 @@ export class AuthService {
   GetAll(){
     const token = localStorage.getItem('token');
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
-    return this.http.get(this.apiurl + '/userslist')
+    return this.http.get(this.apiurl + '/userslist',{ headers: headers })
   }
   
   login(user:any){
@@ -61,6 +61,12 @@ export class AuthService {
     const token = localStorage.getItem('token');
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
     return this.http.get(this.apiurl + '/getsolicitudesuser/' + username , { headers: headers })
+  }
+
+  getSolicitudes(){
+    const token = localStorage.getItem('token');
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    return this.http.get(this.apiurl+'/getsolicitudes', { headers: headers })
   }
   getPublicaciones(){
     const token = localStorage.getItem('token');

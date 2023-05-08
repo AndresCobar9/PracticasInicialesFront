@@ -15,23 +15,27 @@ import { SolicitudespopComponent } from '../solicitudespop/solicitudespop.compon
   templateUrl: './trabajadores.component.html',
   styleUrls: ['./trabajadores.component.css']
 })
-export class TrabajadoresComponent implements  OnInit{
+export class TrabajadoresComponent implements OnInit, AfterViewInit {
 
-  dataSource: any
+  dataSource = new MatTableDataSource<any>();
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+
   constructor(private service:AuthService, private dialog:MatDialog, private _liveAnnouncer: LiveAnnouncer, ){
 
-    
-    
   }
 
   ngOnInit(): void {
     this.loaduser()
   }
+
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
+  }
   
- tareaspop(id:any){
+ tareaspop(id:any, username:any){
   if(sessionStorage.getItem('userrole') == 'Admin'){
     this.dialog.open(TareasPopupComponent,{
-      data: {ID:id}
+      data: {ID:id, Username:username}
     })
   }
   
@@ -41,7 +45,13 @@ export class TrabajadoresComponent implements  OnInit{
   if(sessionStorage.getItem('userrole') == 'Admin'){
   this.dialog.open(EditarUsuarioComponent,{
     data: {ID:id}
-  })}}
+  }
+  ).afterClosed().subscribe(result => {
+    this.loaduser()
+  })
+} 
+ }
+
 solicitudpop(id:any){
   if(sessionStorage.getItem('userrole') == 'Admin'){
   this.dialog.open(SolicitudespopComponent,{
@@ -56,16 +66,15 @@ solicitudpop(id:any){
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-
-
   loaduser(){
 
     this.service.GetAll().subscribe(
       (res: any) => {
-        
         this.paciente = res.users;
-        this.dataSource =new MatTableDataSource(this.paciente)
-        
+
+        console.log(res)
+        this.dataSource.data = this.paciente; // establece los datos de la tabla en el dataSource
+        this.dataSource.paginator = this.paginator; // establece el paginador en el dataSource
       },
       (err) => {
         console.error(err);
@@ -77,4 +86,3 @@ solicitudpop(id:any){
   
 
 }
-

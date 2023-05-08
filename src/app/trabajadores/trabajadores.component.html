@@ -48,7 +48,7 @@
           <!-- Symbol Column -->
           <ng-container matColumnDef="Tareas">
             <th  style="width: 150px !important; text-align: center;" mat-header-cell *matHeaderCellDef ><b>  Tareas </b></th>
-            <td style="text-align: center;" mat-cell *matCellDef="let element">  <button mat-mini-fab color="primary" aria-label="Edit" (click)="tareaspop(element.id)" >
+            <td style="text-align: center;" mat-cell *matCellDef="let element">  <button mat-mini-fab color="primary" aria-label="Edit" (click)="tareaspop(element.id, element.username)" >
               <mat-icon>library_books</mat-icon>
             </button  > </td>
           </ng-container>

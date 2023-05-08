@@ -40,8 +40,8 @@
                         
                         <div class="genero" style="display: flex; justify-content: center; width: 100%; flex-direction: row !important;" >
                             <mat-radio-group formControlName="gender" name="gender" aria-label="Genero" value="{{useri.gender}}" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
-                                <mat-radio-button value="Hombre" style="width: 100px;">Hombre</mat-radio-button>
-                                <mat-radio-button value="Mujer" style="width: 100px;">Mujer</mat-radio-button>
+                                <mat-radio-button value="hombre" style="width: 100px;">Hombre</mat-radio-button>
+                                <mat-radio-button value="mujer" style="width: 100px;">Mujer</mat-radio-button>
                             </mat-radio-group>
                         </div>
                         
@@ -63,8 +63,8 @@
                             style="display: flex; justify-content: center; gap: 10px; width: 85% !important;min-width: 85% !important; height: 40px;">
                             <select id="role" formControlName="area" name="area" value="{{useri.area}}" [attr.disabled]="updateform.get('area')?.disabled ? true : null">
                                 <option value="Administracion" style="width: 85%;">Administracion</option>
-                                <option value="Medica">Salud</option>
-                                <option value="General">Secretaria</option>
+                                <option value="Salud">Salud</option>
+                                <option value="Cocina">Cocina</option>
                                 
                             </select>
                             <button (click)="toggleInput(inputs[5])">✏️</button>
@@ -90,7 +90,7 @@
                       </label>
                     <br>
                 </div>
-                <div class="Boton"><button type="submit" (click)="onSubmit()" routerLink="">Actualizar</button></div>
+                <div class="Boton"><button type="submit" (click)="onSubmit()">Actualizar</button></div>
 
             </form>
         </div>
