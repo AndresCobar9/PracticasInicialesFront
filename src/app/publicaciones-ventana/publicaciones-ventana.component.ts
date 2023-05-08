@@ -26,11 +26,17 @@ constructor(public dialogRef: MatDialogRef<PublicacionesVentanaComponent>, @Inje
 }
   creado:any;
  
-  registraPublicacion(){
-   this.service.registrarPublicacion(this.PublicacionForm.value).subscribe((data:any)=>{
-    this.toastr.success('Publicacion creada con exito');
-    this.dialogRef.close();
-   })
+  registraPublicacion() {
+    // Verifica si el formulario es válido
+    if (this.PublicacionForm.valid) {
+      this.service.registrarPublicacion(this.PublicacionForm.value).subscribe((data: any) => {
+        this.toastr.success('Publicación creada con éxito');
+        this.dialogRef.close();
+      });
+    } else {
+      // Muestra una notificación si hay campos vacíos
+      this.toastr.error('Por favor, completa todos los campos', 'Campos vacíos');
+    }
   }
   
   }

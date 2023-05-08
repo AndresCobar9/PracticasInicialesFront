@@ -20,4 +20,12 @@ export class BarraComponent {
     sessionStorage.clear()
     localStorage.clear()
   }
+  Admin(){
+    if(sessionStorage.getItem('userrole') == 'Admin'){
+    this.router.navigate(['/DashboardAdmin'])
+  }
+  else{
+    this.toastr.error('No tienes permisos para acceder a esta seccion')
+  }
+}
 }

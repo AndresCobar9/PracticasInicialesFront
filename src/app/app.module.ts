@@ -30,7 +30,13 @@ import { EditarUsuarioComponent } from './editar-usuario/editar-usuario.componen
 import { PasswordUpdateComponent } from './password-update/password-update.component';
 import { SolicitudespopComponent } from './solicitudespop/solicitudespop.component';
 import { SolicitudAdminComponent } from './solicitud-admin/solicitud-admin.component';
+import { SolicitudselectorComponent } from './solicitudselector/solicitudselector.component';
+import { SolicitudPreviewComponent } from './solicitud-preview/solicitud-preview.component';
+import { JwtModule } from '@auth0/angular-jwt';
 
+export function tokenGetter() {
+    return localStorage.getItem('token');
+  }
 
 @NgModule({
     declarations: [
@@ -53,7 +59,9 @@ import { SolicitudAdminComponent } from './solicitud-admin/solicitud-admin.compo
         EditarUsuarioComponent,
         PasswordUpdateComponent,
         SolicitudespopComponent,
-        SolicitudAdminComponent
+        SolicitudAdminComponent,
+        SolicitudselectorComponent,
+        SolicitudPreviewComponent
         
 
 
@@ -72,7 +80,14 @@ import { SolicitudAdminComponent } from './solicitud-admin/solicitud-admin.compo
         SpinnerModule,
         MaterialModule,
         ToastrModule.forRoot(),
-        FullCalendarModule
+        FullCalendarModule,
+        JwtModule.forRoot({
+            config: {
+              tokenGetter: tokenGetter,
+              allowedDomains: ['https://backendpracticas-production.up.railway.app/'], // Reemplaza esto con el dominio de tu API
+              disallowedRoutes: [],
+            },
+          }),
         
     ]
 })

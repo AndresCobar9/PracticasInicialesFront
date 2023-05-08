@@ -12,6 +12,7 @@ import { DashboardAdminComponent } from './dashboard-admin/dashboard-admin.compo
 import { PublicacionesComponent } from './publicaciones/publicaciones.component';
 import { TrabajadoresComponent } from './trabajadores/trabajadores.component';
 import { EditarUsuarioComponent } from './editar-usuario/editar-usuario.component';
+import { HistorialSolicitudesComponent } from './historial-solicitudes/historial-solicitudes.component';
 
 
 
@@ -19,15 +20,16 @@ import { EditarUsuarioComponent } from './editar-usuario/editar-usuario.componen
 const routes: Routes = [  
   {path: '', component:HomeComponent},
   {path: 'login', component:LoginComponent},
-  {path: 'register', component:RegisterComponent, },
-  {path: 'Dashboard', component:DashboardComponent,},
-  {path: 'users', component:TrabajadoresComponent, },
-  {path: 'update', component:EditarUsuarioComponent, },
-  {path: 'DashboardAdmin', component:DashboardAdminComponent,},
-  {path: 'publicaciones', component:PublicacionesComponent,},
-  {path: 'tareas', component:TareasComponent},
-  {path: 'solicitud', component:SolicitudTrabajadorComponent},
-  {path: 'trabajadores', component:TrabajadoresComponent},
+  {path: 'register', component:RegisterComponent,canActivate:[AuthGuard] },
+  {path: 'Dashboard', component:DashboardComponent,canActivate:[AuthGuard]},
+  {path: 'users', component:TrabajadoresComponent,canActivate:[AuthGuard] },
+  {path: 'update', component:EditarUsuarioComponent,canActivate:[AuthGuard] },
+  {path: 'DashboardAdmin', component:DashboardAdminComponent,canActivate:[AuthGuard]},
+  {path: 'publicaciones', component:PublicacionesComponent,canActivate:[AuthGuard]},
+  {path: 'tareas', component:TareasComponent,canActivate:[AuthGuard]},
+  {path: 'solicitud', component:SolicitudTrabajadorComponent,canActivate:[AuthGuard]},
+  {path: 'trabajadores', component:TrabajadoresComponent,canActivate:[AuthGuard]},
+  {path: 'Solicitudes', component:HistorialSolicitudesComponent,canActivate:[AuthGuard]},
 ]
 
 @NgModule({

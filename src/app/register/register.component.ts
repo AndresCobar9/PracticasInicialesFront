@@ -22,7 +22,7 @@ throw new Error('Method not implemented.');
     name:this.builder.control('',Validators.required),
     password:this.builder.control('',Validators.compose([Validators.required,Validators.pattern('[a-zA-Z0-9]*')])),
     email:this.builder.control('',Validators.compose([Validators.required,Validators.email])),
-    gender:this.builder.control(''),
+    gender:this.builder.control('', Validators.required),
     role:this.builder.control(''),
     area:this.builder.control('',Validators.required),
     isactive:this.builder.control(false)
@@ -32,8 +32,16 @@ throw new Error('Method not implemented.');
     if(this.registerform.valid){
       this.service.Proceedregister(this.registerform.value).subscribe(res => {
 
-        this.toastr.success('Contacta con el administrador para confirmar el acceso','Registro Realizado correctamente')
-        this.router.navigate(['/'])
+        this.toastr.success('Usuario Registrado Correctamente','Registro Realizado correctamente')
+        this.router.navigate(['/DashboardAdmin'])
+      }, err => {
+        if(err.status == 409){
+          this.toastr.error('El usuario ya existe','Error')
+        }
+        else{
+          this.toastr.error('Error al registrar','Error')
+        }
+        
       });
     }else{
       for (const field in this.registerform.controls) {

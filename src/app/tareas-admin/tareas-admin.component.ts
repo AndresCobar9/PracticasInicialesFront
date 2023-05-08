@@ -49,7 +49,7 @@ export class TareasAdminComponent implements OnInit{
     this.service.registrarTarea(this.TareaForm.value, this.data.ID).subscribe((data:any)=>{
       console.log(data)
       this.toastr.success('Tarea registrada correctamente')
-      this.router.navigateByUrl('Dashboard')
+      this.dialogRef.close()
     })
   }
 }

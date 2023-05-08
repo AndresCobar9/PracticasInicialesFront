@@ -33,34 +33,47 @@ getPublicaciones(){
   this.service.getPublicaciones().subscribe((data:any)=>{
     this.publicaciones = data.publicaciones;
     this.publicaciones.reverse();
-  }) 
+  })
 }
 
 getPublicacionesArea(){
-  this.service.getArea(this.areaForm.value).subscribe((data:any)=>{
+  this.service.getArea(sessionStorage.getItem('area')).subscribe((data:any)=>{
     this.publicaciones = data.publicaciones;
     this.publicaciones.reverse();
   })
 }
 openPublicaciones(){
-  this.dialog.open(PublicacionesVentanaComponent,{
-  
-   
-  })
+ 
 }
 
 delete(id:any){
+  if(sessionStorage.getItem('userrole') == 'Admin'){
   this.service.deletePublicacion(id).subscribe((data:any)=>{
     this.getPublicaciones();
     this.toastr.success('Publicacion eliminada con exito');
   })
 }
+else{
+  this.toastr.error('No tienes permisos para realizar esta accion')
+}
+}
 
 addPublicacion(){
- this.dialog.open(PublicacionesVentanaComponent,{
- }
- )
-}
+  if(sessionStorage.getItem('userrole') == 'Admin'){
+    this.dialog.open(PublicacionesVentanaComponent,{
+    
+    }).afterClosed().subscribe(result => {
+      if(sessionStorage.getItem('area') == 'Administracion'){
+      this.getPublicaciones();
+      }else{
+        this.getPublicacionesArea();
+      }
+    }
+    );
+  }
+  else{
+    this.toastr.error('No tienes permisos para realizar esta accion')
+  }}
 }
   
   

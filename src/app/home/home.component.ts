@@ -17,4 +17,8 @@ export class HomeComponent {
       this.router.navigateByUrl('login')
     }
   }
+
+  redirectToExternalWebsite() {
+    window.open('https://hospiciosanjose.org/', '_blank');
+  }
 }

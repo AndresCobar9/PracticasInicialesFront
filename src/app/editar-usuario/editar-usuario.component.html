@@ -19,9 +19,7 @@
                             style="display: flex; justify-content: center; gap: 10px; width: 85% !important;min-width: 85% !important; height: 40px;">
                             <select id="role" formControlName="role" name="role" value="{{useri.role}}" [attr.disabled]="updateform.get('role')?.disabled ? true : null">
                                 <option value="Admin" style="width: 85%;">Administrador</option>
-                                <option value="user">Usuario</option>
                                 <option value="Usuario">Usuario</option>
-                                <option value="Invitado">Invitado</option>
                             </select>
                             <button (click)="toggleInput(inputs[1])">✏️</button>
                         </div>
@@ -65,8 +63,8 @@
                             style="display: flex; justify-content: center; gap: 10px; width: 85% !important;min-width: 85% !important; height: 40px;">
                             <select id="role" formControlName="area" name="area" value="{{useri.area}}" [attr.disabled]="updateform.get('area')?.disabled ? true : null">
                                 <option value="Administracion" style="width: 85%;">Administracion</option>
-                                <option value="Medica">Medica</option>
-                                <option value="General">General</option>
+                                <option value="Medica">Salud</option>
+                                <option value="General">Secretaria</option>
                                 
                             </select>
                             <button (click)="toggleInput(inputs[5])">✏️</button>

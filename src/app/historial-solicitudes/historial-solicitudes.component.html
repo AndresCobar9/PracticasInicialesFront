@@ -1,1 +1,89 @@
-<p>historial-solicitudes works!</p>
+<body>
+
+
+    <div style="height: 190px;"></div>
+    <div class="contenedorPrincipal" style="height: calc(100vh - 190px); display: flex;">
+        <div id="scrollbar1" class="list"
+            style="margin: 0% 1% 0% 1%;height: 99%;width: 20%; background: rgb(181, 180, 180); box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset; overflow-y: scroll; ">
+
+            <button class="btn-reset" *ngFor="let solicitud of solicitudes" (click)="ActualizarDatos(solicitud.id)">
+                <div>
+                    <h1 style="font-family: 'Oswald', sans-serif; font-size: 25px;"><b> {{solicitud.asunto}}</b></h1>
+                </div>
+                <div>
+                    <p style="font-family: 'Oswald', sans-serif; padding: 0; margin: 0;"> <b> Estado: </b> <span
+                            [style.color]="solicitud.autorizado ? 'green' : 'red'">{{solicitud.autorizado ? 'Abierta' :
+                            'Cerrada'}}</span> </p>
+                </div>
+            </button>
+
+        </div>
+        
+        <div
+            style="height: 99%; width: 80%;margin: 0% 1% 0% 1%; background: rgb(233, 233, 233); box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;">
+            
+            <div style=" background-color: rgb(247, 247, 247); margin: 1%; height: 96%;">
+                <form action="" [formGroup]="SolicitudForm">
+                    <div style="display: flex; height: 40%;">
+                        <div style="width: 100%">
+                            <div class="Inputs" style="display: flex; ; margin: 5%; align-items: center;">
+                                <label for="Name"
+                                    style="width: 150px; font-family: 'Oswald', sans-serif; font-size: 25px;">
+                                    Asunto:
+                                </label>
+                                <input type="text" formControlName="Asunto">
+                            </div>
+
+                            <div class="Inputs"
+                                style="display: flex ; margin: 5%; justify-content: center; align-items: center;">
+                                <label for="Name"
+                                    style="width: 150px; font-family: 'Oswald', sans-serif; font-size: 25px;">
+                                    Area: </label>
+                                <input type="text" formControlName="Area">
+                            </div>
+                            <div class="Inputs"
+                                style="display: flex;  margin: 5%; justify-content: center; align-items: center;">
+                                <label for="Name"
+                                    style="width: 150px; font-family: 'Oswald', sans-serif; font-size: 25px;">
+                                    Fecha: </label>
+                                <input type="text" formControlName="Fecha">
+                            </div>
+                        </div>
+
+                        <div
+                            style="width: 30%;display: flex; justify-content: center; align-items: center; margin: 1%;">
+                            <img src="/assets/latest.png" alt="" style="width: 90%; ">
+                        </div>
+                    </div>
+                    <div style="height: 55%; margin-top: 20px;">
+                        <label for="" style="width: 100%;text-align: center;">
+                            <h1 style="font-family: 'Oswald', sans-serif;">Solicitud</h1>
+                        </label>
+                        <div style="display: flex; justify-content: center;align-items: center; width: 100% ;">
+                            <textarea name="" id="" cols="30" rows="10" style="height: 90%; width: 95%;" formControlName="Descripcion"> </textarea>
+                        </div>
+                        <div style="height: 20%;">
+                            <div
+                                style="width: 100%; height: 100% ;display: flex; justify-content: space-evenly; align-items: center;">
+                                <div style="display: flex; gap: 10px;">
+                                    <p style="font-family: 'Oswald', sans-serif; padding: 0; margin: 0; font-size: 20px;"> <b> Estado: </b> </p>
+                                    <span style="font-family: 'Oswald', sans-serif; font-size: 20px;;" [style.color]="estado ? 'green' : 'red'">{{estado ? 'Abierto' : 'Cerrado'}}</span>
+                                </div>
+                                <button class="learn-more">
+                                    <span class="circle" aria-hidden="true">
+                                        <span class="icon arrow"></span>
+                                    </span>
+                                    <span class="button-text">Ver Respuesta</span>
+                                </button>
+
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+       
+        </div>
+
+
+    </div>
+</body>

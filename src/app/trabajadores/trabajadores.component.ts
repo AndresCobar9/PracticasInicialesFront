@@ -29,19 +29,24 @@ export class TrabajadoresComponent implements  OnInit{
   }
   
  tareaspop(id:any){
-  this.dialog.open(TareasPopupComponent,{
-    data: {ID:id}
-  })
+  if(sessionStorage.getItem('userrole') == 'Admin'){
+    this.dialog.open(TareasPopupComponent,{
+      data: {ID:id}
+    })
+  }
+  
  }
 
  infopop(id:any){
+  if(sessionStorage.getItem('userrole') == 'Admin'){
   this.dialog.open(EditarUsuarioComponent,{
     data: {ID:id}
-  })}
+  })}}
 solicitudpop(id:any){
+  if(sessionStorage.getItem('userrole') == 'Admin'){
   this.dialog.open(SolicitudespopComponent,{
     data: {ID:id}
-  })
+  })}
 }
   paciente:any={}
 

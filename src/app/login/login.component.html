@@ -8,13 +8,13 @@
     <!-- Tabs Titles -->
 
     <!-- Icon -->
-    <div class="fadeIn first">
+    <div class="fadeIn first" style="padding-bottom: 25px; padding-top: 25px;">
       <img src="./assets/latest.png" id="icon" alt="User Icon" />
     </div>
 
     <!-- Login Form -->
     <form [formGroup]="loginform" (ngSubmit)="proceedlogin()" >
-      <input type="text" id="login" class="fadeIn second" name="username" placeholder="Correo" formControlName="username" autocomplete="off">
+      <input type="text" id="login" class="fadeIn second" name="username" placeholder="Usuario" formControlName="username" autocomplete="off">
       <input type="password" id="password" class="fadeIn third" name="password" placeholder="Contraseña" formControlName="password" autocomplete="off">
       <input type="submit" class="fadeIn fourth" value="INGRESAR">
     </form>

@@ -39,15 +39,20 @@ SolicitudForm = this.builder.group({
 fecha:any;
 
 
+registrarSolicitud() {
+  this.SolicitudForm.value.Solicitante = sessionStorage.getItem('username');
+  console.log(this.SolicitudForm.value);
 
-registrarSolicitud(){
-  this.SolicitudForm.value.Solicitante = sessionStorage.getItem('username')
-  console.log(this.SolicitudForm.value)
-  this.service.registrarSolicitud(this.SolicitudForm.value).subscribe((data:any)=>{
-    
-    this.toastr.success('Solicitud enviada correctamente')
-    this.router.navigateByUrl('Dashboard')
-  })
+  // Verifica si el formulario es válido
+  if (this.SolicitudForm.valid) {
+    this.service.registrarSolicitud(this.SolicitudForm.value).subscribe((data: any) => {
+      this.toastr.success('Solicitud enviada correctamente');
+      this.router.navigateByUrl('Dashboard');
+    });
+  } else {
+    // Muestra una notificación si hay campos vacíos
+    this.toastr.error('Por favor, completa todos los campos', 'Campos vacíos');
+  }
 }
 
 
